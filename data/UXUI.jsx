@@ -1,7 +1,7 @@
 import React from "react";
 import { ProjectGallery } from "eportfolio-shared";
 import "./UXUI.css"
-import heroImg from "../assets/Images/geeseInvasion/geeseInvasion.png"
+import heroImg from "../assets/Images/geeseInvasion.png"
 
 export default function UXUI() {
   const UXUIProjects = [
