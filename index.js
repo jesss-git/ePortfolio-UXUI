@@ -1,1 +1,1 @@
-export { default as UXUIPage } from "./data/UXUI.jsx";
+export { default as ExperiencePage } from "./data/Experience.jsx";
