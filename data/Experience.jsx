@@ -1,14 +1,14 @@
 import React from "react";
 import { ProjectGallery } from "eportfolio-shared";
-import "./UXUI.css"
+import "./Experience.css"
 import heroImg from "../assets/Images/geeseinvasion.png"
 
-export default function UXUI() {
-  const UXUIProjects = [
+export default function Experience() {
+  const ExperienceProjects = [
     {
       id: 1,
       image: heroImg,
-      title: "UXUI Prroj 1",
+      title: "Experience 1",
       date: "April 2025",
       description: "Exploring computational sound, I wanted to visualize sound, creating a looper pedal effect where users can record themselves and play back audio, while observing their audio being transformed into a kaleidoscope visual.",
       tags: ["Python"],
@@ -16,7 +16,7 @@ export default function UXUI() {
     {
       id: 2,
       image: heroImg,
-      title: "UXUI Prroj 2",
+      title: "Experience 2",
       date: "April 2025",
       description: "Exploring computational sound, I wanted to visualize sound, creating a looper pedal effect where users can record themselves and play back audio, while observing their audio being transformed into a kaleidoscope visual.",
       tags: ["Python"],
@@ -24,7 +24,7 @@ export default function UXUI() {
     {
       id: 3,
       image: heroImg,
-      title: "UXUI Prroj 3",
+      title: "Experience 3",
       date: "April 2025",
       description: "Exploring computational sound, I wanted to visualize sound, creating a looper pedal effect where users can record themselves and play back audio, while observing their audio being transformed into a kaleidoscope visual.",
       tags: ["Python"],
@@ -42,9 +42,9 @@ export default function UXUI() {
 
 
       <ProjectGallery
-        title="Featured UX/UI Projects"
+        title="Featured Experience"
         subtitle="Apps, tools, and experiments inspired by climbing and nature."
-        projects={UXUIProjects}
+        projects={ExperienceProjects}
       />
     </>
   );
