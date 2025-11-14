@@ -12,14 +12,27 @@ import LODOrigDemo from "../assets/Videos/Heseri-LOD/LOD-Orig-Demo.mov";
 import LOD1Demo from "../assets/Videos/Heseri-LOD/LOD1-Demo.mov";
 import LOD2Demo from "../assets/Videos/Heseri-LOD/LOD2-Demo.mov";
 
+import rocketCover from "../assets/Images/Heseri-Rockets/Demo.png";
+import OrigRocketDemo from "../assets/Videos/Heseri-Rockets/Original.mov";
+import RocketIssueTooEarly from "../assets/Videos/Heseri-Rockets/IssueTooEarly.mov";
+import RocketIssueFallOnPlane from "../assets/Videos/Heseri-Rockets/IssueFallOnPlane.mov";
+import RocketFunnyWingsFlyOff from "../assets/Videos/Heseri-Rockets/FunnyWingsFlyOff.mov";
+import RocketFunnyPlaneExplode from "../assets/Videos/Heseri-Rockets/FunnyPlaneExplode.mov";
+import RocketFunnyFlyRight from "../assets/Videos/Heseri-Rockets/FunnyFlyRight.mov";
+import RocketFunnyBigPopOff from "../assets/Videos/Heseri-Rockets/FunnyBigPopOff.mp4";
+import RocketEdgeCase from "../assets/Videos/Heseri-Rockets/EdgeCase.mov";
+import RocketDemo from "../assets/Videos/Heseri-Rockets/Demo.mov";
+import RocketAwkwardFallDown from "../assets/Videos/Heseri-Rockets/AwkwardFallDown.mov";
+import RocketAddTorque from "../assets/Videos/Heseri-Rockets/AddTorque.mov";
+
 export default function Experience() {
   const ExperienceProjects = [
     {
       id: 1,
       image: LODCover,
-      title: "LOD Optimization for Mobile Game",
+      title: "LOD Optimization - Heseri Games",
       date: "September 2024",
-      description: "During my co-op at Heseri Games, I optimizing a performance-heavy mobile game environment by researching, implementing, and refining Level of Detail (LOD) techniques.",
+      description: "During my co-op at Heseri Games, I optimized a performance-heavy mobile game environment, reducing total geometry by 60% by implementing Level of Detail (LOD) techniques.",
       tags: ["Unity", "C#"],
       sections: [
         {
@@ -33,7 +46,7 @@ export default function Experience() {
         {
           heading: "Project Summary",
           text: [
-            "During my co-op at Heseri Games, I optimizing a performance-heavy mobile game environment by researching, implementing, and refining Level of Detail (LOD) techniques to enhance performance on mobile devices without compromising visual quality or gameplay experience. The goal was to significantly reduce rendering load and complexity while maintaining visual fidelity across devices.",
+            "During my co-op at Heseri Games, I optimized a performance-heavy mobile game environment by researching, implementing, and refining Level of Detail (LOD) techniques to enhance performance on mobile devices without compromising visual quality or gameplay experience. The goal was to significantly reduce rendering load and complexity while maintaining visual fidelity across devices.",
           ],
         },
         {
@@ -148,7 +161,7 @@ export default function Experience() {
           ],
         },
         {
-          heading: "Key Takeways",
+          heading: "Key Takeaways",
           text: [
             "This project deepened my understanding of real-time 3D optimization, LOD techniques, performance profiling, and efficient asset management for mobile game development. I gained hands-on experience in balancing visual fidelity with performance constraints, a critical skill in game development. Additionally, I enhanced my problem-solving abilities by addressing rendering issues and refining optimization strategies through iterative testing and feedback. I learned how small technical adjustments at the mesh level can have a massive impact on runtime efficiency and user experience in mobile gaming.",
           ],
@@ -157,35 +170,158 @@ export default function Experience() {
     },
     {
       id: 2,
-      image: heroImg,
-      title: "Experience 2",
-      date: "April 2025",
-      description: "Exploring computational sound, I wanted to visualize sound, creating a looper pedal effect where users can record themselves and play back audio, while observing their audio being transformed into a kaleidoscope visual.",
+      image: rocketCover,
+      title: "Rocket Detachment System - Heseri Games",
+      date: "September 2024",
+      description: "In this project, I developed a rocket animation that applies real-world physics principles to simulate rocket movement and behaviour on detachment from airplane body.",
       tags: ["Unity", "C#"],
       sections: [
-        {},
-        {},
-        {},
-        {},
-        {},
+        {
+          images: [
+            rocketCover,
+          ],
+        },
+        {
+          heading: "Rocket Detachment System",
+        },
+        {
+          heading: "Project Summary",
+          text: [
+            "In this project, I developed a dynamic rocket detachment system for a mobile game at Heseri Games, applying real-world physics principles to simulate rocket movement and behaviour upon detachment from an airplane body. The system aimed to enhance gameplay realism and immersion, and provide visual feedback. After players used rocket boosts, the rockets would now detach and fall off the airplane body naturally, using physics-based interactions for a smoother, more immersive experience.",
+          ],
+        },
+        {
+          images: [
+            OrigRocketDemo,
+          ],
+        },
+        {
+          text: [
+            "Above is an example of the original rocket behaviour, where rockets simply 'turned off' after fuel depletion, remaining attached to the airplane body.",
+          ],
+        },
+        {
+          heading: "Problem Statement",
+          text: [
+            "Originally, when players activated rockets during gameplay, the boosters woudl simply 'turn off' after their fuel duration ended, remaining attached to the airplane. This caused some confusion, broke immersion, and limited visual realism.",
+            "My task was to implement a rocket detachment system, where rockets would detach from the airplane body after use, while ensuring consistent behaviour across different gameplay states, levels, and collision scenarios. The goal was to create a more dynamic and engaging experience by allowing rockets to fall away naturally, enhancing visual feedback and immersion.",
+          ],
+        },
         {
           heading: "Role & Responsibilities",
           text: [
             "Position: Game Developer (Co-op)",
             "Responsibilities:",
-            "▸ ",
-            "▸ ",
-            "▸ ",
-            "▸ ",
-            "▸ ",
-            "▸ ",
+            "▸ Researched multiple Unity physics-based approaches for object detachment.",
+            "▸ Designed and implemented a robust rocket detachment mechanic triggered by rocket fuel depletion or collision events.",
+            "▸ Experimented with joint behaviours, rigidbodies, and particle system integration to simulate realistic rocket fall-off and interactions with the environment.",
+            "▸ Accounted for edge cases such as early collision, delayed triggers, particle timing, and varying gameplay conditions to ensure consistent behaviour.",
+            "▸ Documented solutions and performance considerations for future physics-based features.",
           ],
         },
-        {},
-        {},
-        {},
-        {},
-        {},
+        {
+          heading: "Process Highlights",
+          text: [
+            "Initial Research & Ideation:",
+            "▸ Explored Unity's FixedJoint and Rigidbody systems for object attachment and detachment mechanics.",
+            "▸ Considered four implementation strategies:",
+            "1. Remove Fixed Joint manually after event trigger - when rocket fuel depletes or collision occurs, remove the FixedJoint component to allow natural physics-based fall-off.",
+            "2. Remove Fixed Joint via timer - start a timer upon event trigger, ",
+            "3. Break Fixed Joint using applied force - apply a sudden force to the joint to simulate detachment.",
+            "4. Break Joint on collision or timer - combine collision detection with a timer to trigger joint breakage.",
+            "Testing & Experimentation:",
+            "▸ Built prototype scripts to test each approach in isolation and tested edge cases, such as timing mismatch, overlapping collisions, collision prior to fuel depletion, and more.",
+            "▸ Evaluated stability, performance, and visual feedback.",
+            "Final Implementation:",
+            "▸ Chose the collision or timer-based joint breakage method for optimal balance between control and realism.",
+            "▸ Integrated detachment with the particle system lifecycle, ensuring rockets detached and fall off immediately after particle effects completed and fuel depletion.",
+            "▸ Fine-tuned physics values for natural fall motion and impact reactions.",
+          ],
+        },
+        {
+          heading: "Testing & Experimentation Demos",
+          text: [
+            "The following are some examples of demos testing and experimenting with various edge cases and behaviours of the rocket detachment system:",
+          ],
+        },
+        {
+          images: [
+            RocketEdgeCase,
+          ],
+        },
+        {
+          text: [
+            "Above is an example of testing one of many edge cases, where the rocket is not used and the plane collides with the ground - the rocket should still detach from force of collision.",
+          ],
+        },
+        {
+          images: [
+            RocketFunnyWingsFlyOff,
+            RocketFunnyPlaneExplode,
+          ],
+        },
+        {
+          text: [
+            "Above are some funny demos during testing, where the rockets detach from the plane, but it detached with so much force, it caused the wings to fly off, or the entire plane to explode.",
+          ],
+        },
+        {
+          images: [
+            RocketFunnyBigPopOff,
+          ],
+        },
+        {
+          images: [
+            RocketFunnyFlyRight,
+          ],
+        },
+        {
+          text: [
+            "Above are more funny demos during testing, where the force of detachment is fixed and no longer affects the body of the plane, but the rockets still detach with too much force, causing them to fly off in funny directions.",
+          ],
+        },
+        {
+          images: [
+            RocketIssueFallOnPlane,
+            RocketIssueTooEarly,
+          ],
+        },
+        {
+          text: [
+            "Above demonstrates some other issues encountered during testing and experimentating - the rockets would fall onto the wings and cause a 'collision' or the rockets would detach too early before the particle effect finished.",
+          ],
+        },
+        {
+          images: [
+            RocketAwkwardFallDown,
+            RocketAddTorque,
+          ],
+        },
+        {
+          text: [
+            "After having the basis down, the detachment still looked somewhat awkward and I wanted to make it look more natural. So I experimented with adding torque to the rockets upon detachment, to simulate a more natural fall-off with spinning motion.",
+          ],
+        },
+        {
+          heading: "Outcome & Impact",
+          text: [
+            "▸ Implemented a fully functional rocket detachment system, improving player immersion and visual polish.",
+            "▸ Enhanced realism with physics-based rocket detachment and reactive collision handling.",
+            "▸ Reducejd manual cleanup and timing desynchronization by integrating detachment system with particle events.",
+            "▸ Provided the design team with modular, reusable scripts for future physics-based detachable components and mechanisms.",
+          ],
+        },
+        {
+          images: [
+            RocketDemo,
+          ],
+        },
+        {
+          heading: "Key Takeaways",
+          text: [
+            "This project strengthened my understanding of Unity's physics system, joint mechanics, and event-driven scripting. This project made me think out of the box and truly consider all potential edge case, and it also reinforced the importance of prototyping multiple solutions before selecting the most stable and performant implementation.",
+          ],
+        },
       ],
     },
     {
@@ -215,6 +351,20 @@ export default function Experience() {
           ],
         },
         {},
+        {},
+        {},
+        {},
+        {
+          heading: "Outcome & Impact",
+          text: [
+            "▸ ",
+            "▸ ",
+            "▸ ",
+            "▸ ",
+            "▸ ",
+            "▸ ",
+          ],
+        },
         {},
         {},
         {},
